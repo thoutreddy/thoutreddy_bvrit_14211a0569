@@ -50,9 +50,8 @@ public class StudentGroup implements StudentArrayOperation {
 				}
 			}
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e) 
 			System.out.println("Caught")+e.getMessage());
-		}
 	}
 
 	@Override
@@ -62,10 +61,8 @@ public class StudentGroup implements StudentArrayOperation {
 			if(index<0||index>=students.length)
 				throw new IllegalArgumentException("threw exception");
 		}
-		catch(IllegalArgumentException e) {
-			System.out.println("Caught")+e.getMessage());
-		}
-		
+		catch(IllegalArgumentException e) 
+			System.out.println("Caught")+e.getMessage());		
 		return null;
 	}
 
@@ -79,9 +76,8 @@ public class StudentGroup implements StudentArrayOperation {
 				students[index]=student;
 				}
 			}		
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e) 
 			System.out.println("Caught")+e.getMessage());
-		}
 	}
 
 	@Override
@@ -90,20 +86,16 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(student==null)
 				throw new IllegalArgumentException("threw exception");
-			else {
-					students.length=students.length+1;
-					int i;
-					for(i=students.length-1;i>0;i--) {
-						students[i]=students[i-1];
-					}
-					students[i]=student;
-
-				}
+			students.length=students.length+1;
+			int i;
+			for(i=students.length-1;i>0;i--) {
+				students[i]=students[i-1];
+			}
+			students[i]=student;
 			}
 
-		catch(IllegalArgumentException e) {
-			System.out.println("Caught")+e.getMessage());
-		}
+		catch(IllegalArgumentException e) 
+			System.out.println("Caught")+e.getMessage());		
 	}
 
 	@Override
@@ -111,16 +103,13 @@ public class StudentGroup implements StudentArrayOperation {
 		// Add your implementation here
 		try {
 			if(student==null)
-				throw new IllegalArgumentException("threw exception");
-			else {
+				throw new IllegalArgumentException("threw exception");			
 					students.length=students.length+1;
-					students[length-1]=student;
-				}
+					students[length-1]=student;				
 			}
 
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e)
 			System.out.println("Caught")+e.getMessage());
-		}
 	}
 
 	@Override
@@ -129,19 +118,15 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(student==null||index<0||index>=students.length)
 				throw new IllegalArgumentException("threw exception");
-			else {
 				students.length=students.length+1;
 				int i;
 				for(i=students.length-1;i>index;i--) {
 					students[i]=students[i-1];
 				}
-				students[i]=student;
-			}
-				
+				students[i]=student;						
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e)
 			System.out.println("Caught")+e.getMessage());
-		}
 	}
 
 	@Override
@@ -150,20 +135,15 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(index<0||index>=students.length)
 				throw new IllegalArgumentException("threw exception");
-			else {
 					int i;
 					for(i=index;i<students.length;i++) {
 						students[i]=students[i+1];
 					}
-					students.length=students.length-1;	
-			}
-				
+					students.length=students.length-1;					
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e) 
 			System.out.println("Caught")+e.getMessage());
-		}
 	}
-
 
 	@Override
 	public void remove(Student student) {
@@ -171,7 +151,6 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(student==null)
 				throw new IllegalArgumentException("threw exception");
-			else {
 				int i,c=0,j;
 				for(i=0;i<students.length;i++) {
 					if(students[i]==student) {
@@ -180,18 +159,14 @@ public class StudentGroup implements StudentArrayOperation {
 							students[j]=students[j+1];
 						students.length=students.length-1;
 						break;
-						
 					}
 			}
 				if(c==0) {
 					throw new IllegalArgumentException("Student not exist");
 				}
 		}
-		}
-		catch(IllegalArgumentException e) {
-			System.out.println("Caught")+e.getMessage());
-		}
-		
+		catch(IllegalArgumentException e) 
+			System.out.println("Caught")+e.getMessage());	
 	}
 
 	@Override
@@ -200,14 +175,10 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(index<0||index>=students.length)
 				throw new IllegalArgumentException("threw exception");
-			else {
 				students.length=students.length-index;
-			}
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e) 
 			System.out.println("Caught")+e.getMessage());
-		}
-		
 	}
 
 	@Override
@@ -216,7 +187,6 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(student==null)
 				throw new IllegalArgumentException("threw exception");
-			else {
 				int  i;
 				for(i=0;i<students.length;i++) {
 					if(students[i]==student) {
@@ -224,12 +194,9 @@ public class StudentGroup implements StudentArrayOperation {
 						break;
 					}
 				}
-			}
 		}
-		catch(IllegalArgumentException e) {
-			System.out.println("Caught")+e.getMessage());
-		}
-		
+		catch(IllegalArgumentException e)
+			System.out.println("Caught")+e.getMessage());	
 	}
 
 	@Override
@@ -238,18 +205,15 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(student==null)
 				throw new IllegalArgumentException("threw exception");
-			else {
 				int k=index;
 				for(int i=0;i<students.length;i++) {
 					students[i]=students[index];
 					index++;
 				}
 				students.length=students.length-k;
-			}
 		}
-		catch(IllegalArgumentException e) {
-			System.out.println("Caught")+e.getMessage());
-		}		
+		catch(IllegalArgumentException e) 
+			System.out.println("Caught")+e.getMessage());		
 	}
 
 	@Override
@@ -269,9 +233,8 @@ public class StudentGroup implements StudentArrayOperation {
 				}
 			}
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e)
 			System.out.println("Caught")+e.getMessage());
-		}
 	}
 
 	@Override
@@ -299,9 +262,8 @@ public class StudentGroup implements StudentArrayOperation {
 			if(date==null)
 				throw new IllegalArgumentException("threw exception");
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e)
 			System.out.println("Caught")+e.getMessage());
-		}	
 		return null;
 	}
 
@@ -316,9 +278,8 @@ public class StudentGroup implements StudentArrayOperation {
 					return students[i];
 			}
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e)
 			System.out.println("Caught")+e.getMessage());
-		}
 		return null;
 	}
 
@@ -329,9 +290,8 @@ public class StudentGroup implements StudentArrayOperation {
 			if(date==null)
 				throw new IllegalArgumentException("threw exception");
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e) 
 			System.out.println("Caught")+e.getMessage());
-		}
 		return null;
 	}
 
@@ -342,9 +302,8 @@ public class StudentGroup implements StudentArrayOperation {
 			if(indexOfStudent==null)
 				throw new IllegalArgumentException("threw exception");
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e)
 			System.out.println("Caught")+e.getMessage());
-		}
 		return 0;
 	}
 
@@ -375,16 +334,13 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(student==null)
 				throw new IllegalArgumentException("threw exception");
-			else {
 				int i,c=0;
 				for(i=0;i<students.length;i++) {
 					if(students[i]==student) 
 						return student[i+1];	
 				}
-			}
 		}
-		catch(IllegalArgumentException e) {
+		catch(IllegalArgumentException e) 
 			System.out.println("Caught")+e.getMessage());
-		}
 		return null;
 	}
