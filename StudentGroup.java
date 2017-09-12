@@ -163,8 +163,7 @@ public class StudentGroup implements StudentArrayOperation {
 			System.out.println("Caught")+e.getMessage());
 		}
 	}
-		
-	}
+
 
 	@Override
 	public void remove(Student student) {
@@ -187,6 +186,7 @@ public class StudentGroup implements StudentArrayOperation {
 				if(c==0) {
 					throw new IllegalArgumentException("Student not exist");
 				}
+		}
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("Caught")+e.getMessage());
@@ -249,8 +249,7 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("Caught")+e.getMessage());
-		
-		
+		}		
 	}
 
 	@Override
@@ -272,7 +271,7 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("Caught")+e.getMessage());
-		
+		}
 	}
 
 	@Override
@@ -286,8 +285,7 @@ public class StudentGroup implements StudentArrayOperation {
 					students[j].id=students[j+1].id;
 					students[j+1].id=t;
 					c++;
-				}
-					
+				}	
 			}
 			if(c==0)
 				break;
@@ -303,8 +301,7 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("Caught")+e.getMessage());
-		
-		
+		}	
 		return null;
 	}
 
@@ -314,9 +311,14 @@ public class StudentGroup implements StudentArrayOperation {
 		try {
 			if(firstDate==null||lastDate==null)
 				throw new IllegalArgumentException("threw exception");
+			for(int i=0;i<students.length;i++) {
+				if(students.birthDate>firstDate&&students.birthDate<lastDate)
+					return students[i];
+			}
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("Caught")+e.getMessage());
+		}
 		return null;
 	}
 
@@ -329,6 +331,7 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("Caught")+e.getMessage());
+		}
 		return null;
 	}
 
@@ -341,6 +344,7 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		catch(IllegalArgumentException e) {
 			System.out.println("Caught")+e.getMessage());
+		}
 		return 0;
 	}
 
